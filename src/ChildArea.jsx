@@ -7,7 +7,7 @@ const style = {
 }
 
 export const ChildArea = memo((props) => {
-    const {open} = props;
+    const { open, close} = props;
     console.log("childareaがレンダリングされた")
 
     const data = [...Array(2000).keys()];
@@ -19,6 +19,7 @@ export const ChildArea = memo((props) => {
         <>
             {open && <div style={style}>
                 <p>子コンポーネント</p>
+                <button onClick={close}>閉じる</button>
             </div>}
         </>
     )

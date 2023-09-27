@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import './style.css';
 import { ChildArea } from './ChildArea';
 
@@ -14,6 +14,8 @@ function App() {
     setOpen(!open)
   }
 
+  const onClickClose = useCallback(() => setOpen(false), [setOpen]) /* アロー関数を使うとpropsが変化したと認識してしまうため再レンダリングしてしまう */
+
 
 
   return (
@@ -22,7 +24,7 @@ function App() {
       <br />
       <br />
       <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} />
+      <ChildArea open={open} close={onClickClose} />
     </div>
   );
 }
