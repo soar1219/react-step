@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useMemo } from 'react';
 import './style.css';
 import { ChildArea } from './ChildArea';
 
@@ -16,7 +16,8 @@ function App() {
 
   const onClickClose = useCallback(() => setOpen(false), [setOpen]) /* アロー関数を使うとpropsが変化したと認識してしまうため再レンダリングしてしまう */
 
-
+  const temp = useMemo(() => 1 + 3 ,[]) /* あまり使わない */
+  console.log(temp);
 
   return (
     <div className='App'>
