@@ -35,3 +35,4 @@ const SButton = styled.button`
         cursor: pointer;
     }
 `
+/* sassの記法のまま記述することができる */
